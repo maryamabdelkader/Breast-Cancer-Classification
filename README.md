@@ -1,3 +1,9 @@
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+
+![Scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange)
+
+![Status](https://img.shields.io/badge/status-in%20progress-yellow)
+
 # Breast Cancer Classification using Machine Learning
 
 ## Project Overview
@@ -28,6 +34,11 @@ The project is part of my AI portfolio as an M.Sc. Data Science student and focu
 * Scikit-learn
 
 ---
+## Dataset
+
+The dataset used in this project will be obtained from the UCI Machine Learning Repository and is commonly used for breast cancer classification tasks.
+---
+
 
 ## Project Structure
 
@@ -39,13 +50,28 @@ Breast-Cancer-Classification/
 ├── Breast_Cancer_Classification.ipynb
 └── README.md
 ```
+## Workflow
 
+- Data Loading
+- Data Exploration
+- Data Cleaning
+- Feature Engineering
+- Model Training
+- Model Evaluation
+- Model Interpretation
 ---
+
+## Future Work
+
+- Improve model performance.
+- Compare additional machine learning algorithms.
+- Apply Explainable AI techniques (SHAP).
+- --
+
 
 ## Project Status
 
-🚧 In Progress
-
+🚧 Currently under development.
 ---
 
 ## Author
