@@ -1,83 +1,122 @@
-![Python](https://img.shields.io/badge/Python-3.11-blue)
+# Breast Cancer Classification Using Machine Learning
 
-![Scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange)
+## Overview
 
-![Status](https://img.shields.io/badge/status-in%20progress-yellow)
+This project builds and evaluates machine learning models for breast cancer classification using the Breast Cancer Wisconsin Diagnostic dataset from scikit-learn.
 
-# Breast Cancer Classification using Machine Learning
+The goal is to develop a reproducible machine learning workflow and compare different classification algorithms based on their ability to distinguish between malignant and benign cases.
 
-## Project Overview
-
-This project aims to build a machine learning model to classify breast cancer tumors as **benign** or **malignant** using clinical features.
-
-The project is part of my AI portfolio as an M.Sc. Data Science student and focuses on applying machine learning techniques to healthcare problems.
-
----
-
-## Objectives
-
-* Explore and understand the dataset.
-* Perform data preprocessing.
-* Train and compare different machine learning models.
-* Evaluate model performance.
-* Interpret the results.
-
----
-
-## Technologies
-
-* Python
-* Google Colab
-* Pandas
-* NumPy
-* Matplotlib
-* Scikit-learn
-
----
 ## Dataset
 
-The dataset used in this project will be obtained from the UCI Machine Learning Repository and is commonly used for breast cancer classification tasks.
----
+The dataset contains:
 
+- 569 samples
+- 30 numerical features
+- 2 target classes
+
+Target encoding:
+
+- `0` = Malignant
+- `1` = Benign
+
+The dataset is loaded directly from scikit-learn using `load_breast_cancer()`.
+
+## Machine Learning Workflow
+
+The project follows these main steps:
+
+1. Exploratory Data Analysis (EDA)
+2. Train-test split with stratification
+3. Data preprocessing using pipelines
+4. Stratified 5-fold cross-validation
+5. Model comparison
+6. Model selection based on cross-validation ROC-AUC
+7. Final evaluation on an unseen test set
+8. Confusion matrix analysis
+9. ROC curve analysis
+10. Logistic Regression feature analysis
+
+## Models Evaluated
+
+The following classification models were compared:
+
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- K-Nearest Neighbors (KNN)
+- Support Vector Machine (SVM)
+
+Feature scaling was applied within pipelines where required.
+
+## Evaluation Strategy
+
+The models were compared using stratified 5-fold cross-validation on the training data.
+
+The evaluation metrics were:
+
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- ROC-AUC
+
+Malignant cases were treated as the class of interest when calculating precision, recall, F1-score, and ROC-AUC.
+
+The test set was kept separate from model selection and was used only for final evaluation.
+
+## Results
+
+Logistic Regression achieved the highest mean cross-validation ROC-AUC and was selected as the final model.
+
+On the unseen test set, Logistic Regression achieved:
+
+| Metric | Score |
+|---|---:|
+| Accuracy | 98.25% |
+| Precision (Malignant) | 97.62% |
+| Recall (Malignant) | 97.62% |
+| F1-score (Malignant) | 97.62% |
+| ROC-AUC | 99.54% |
+
+## Key Findings
+
+Logistic Regression provided the strongest overall performance among the evaluated models based on mean cross-validation ROC-AUC.
+
+The Logistic Regression coefficients were also analyzed to identify the features with the strongest influence on the model's predictions.
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Jupyter Notebook
 
 ## Project Structure
 
 ```text
 Breast-Cancer-Classification/
-│
-├── dataset/
-├── images/
 ├── Breast_Cancer_Classification.ipynb
-└── README.md
+├── README.md
+└── requirements.txt
 ```
-## Workflow
+## Limitations
 
-- Data Loading
-- Data Exploration
-- Data Cleaning
-- Feature Engineering
-- Model Training
-- Model Evaluation
-- Model Interpretation
----
+- The dataset is a benchmark dataset and may not represent real-world clinical populations.
+- The results are intended for educational and machine learning practice purposes.
+- Model performance on this dataset should not be interpreted as clinical diagnostic performance.
 
-## Future Work
+## How to Run
 
-- Improve model performance.
-- Compare additional machine learning algorithms.
-- Apply Explainable AI techniques (SHAP).
-- --
+1. Clone or download this repository.
+2. Install the required dependencies from `requirements.txt`.
+3. Open `Breast_Cancer_Classification.ipynb` in Jupyter Notebook or JupyterLab.
+4. Run the notebook cells sequentially.
 
 
-## Project Status
+## Disclaimer
 
-🚧 Currently under development.
----
+This project is for educational purposes only and is not intended for clinical diagnosis or medical decision-making.
 
-## Author
-
-Maryam Abdelkader
-
-M.Sc. Data Science Candidate
-
-Interested in Artificial Intelligence, Machine Learning, Bioinformatics, and Healthcare AI.
